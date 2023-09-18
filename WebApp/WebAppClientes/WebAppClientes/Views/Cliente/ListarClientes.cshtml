@@ -1,0 +1,47 @@
+﻿@using WebAppClientes.Dtos
+@model List<ClientePesquisaDto>
+
+@{
+    var erro = TempData["Erro"] as string;
+}
+
+@if (!string.IsNullOrEmpty(erro))
+{
+    <div class="alert alert-danger">@erro</div>
+}
+
+<h1>Lista de Clientes</h1>
+
+<a asp-controller="Cliente" asp-action="AdicionarCliente" class="btn btn-primary mb-3">Adicionar Cliente</a>
+
+<a asp-controller="Account" asp-action="Logout" class="btn btn-danger mb-3">Logout</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Email</td>
+                    <td>
+                        <a asp-controller="Cliente" asp-action="Detalhes" asp-route-id="@cliente.Id" class="btn btn-info">Detalhes</a>
+                        <form method="post" asp-controller="Cliente" asp-action="ExcluirCliente" class="d-inline">
+                            <input type="hidden" name="id" value="@cliente.Id" />
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

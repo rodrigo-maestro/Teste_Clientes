@@ -1,0 +1,23 @@
+Primeiramente, obrigado pela oportunidade
+
+A documentação do back se dá pelo swagger ao executar o projeto no visual studio (utilizado o visual studio 2022)
+
+a versão utilizada .Net core 6.0
+
+Os usuarios parece acessar são os seguintes, na api de Usuario:
+login: adm@teste.com   senha: 1234
+login: user@teste.com  senha: 4321
+
+Sendo o user@teste apenas com permissão de leitura
+
+Autenticação por Authorization: Bearer {token}
+
+O que creio ter ficado pendente:
+
+No back ficou pendente implementar classes de teste unitários,e testes de integração 
+e rollbacks no banco de dados para certos casos de adição (exemplo, adição de logradouros que ocorrem após adiciona cliente)
+
+No front, ficou pendente a inserção de logradouros, e a alteração dos dados. 
+O front eu fiz totalmente consultando na internet, por ser onde eu tenho menos experiencia
+
+Att. Rodrigo Maestro Alves

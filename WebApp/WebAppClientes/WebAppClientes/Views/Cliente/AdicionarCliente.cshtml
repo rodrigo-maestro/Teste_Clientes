@@ -1,0 +1,33 @@
+﻿@using WebAppClientes.Dtos;
+@model ClienteAdicionarDto
+
+@{
+    var erro = TempData["Erro"] as string;
+}
+
+@if (!string.IsNullOrEmpty(erro))
+{
+    <div class="alert alert-danger">@erro</div>
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Adicionar Cliente</h1>
+
+            <form method="post" asp-action="AdicionarCliente" class="mt-4">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+                <a asp-controller="Cliente" asp-action="ListarClientes" class="btn btn-secondary">Voltar</a>
+            </form>
+        </div>
+    </div>
+</div>

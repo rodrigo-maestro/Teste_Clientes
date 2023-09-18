@@ -1,0 +1,50 @@
+﻿@using WebAppClientes.Dtos
+@model ClienteDetalhesDto
+
+<h1>Detalhes do Cliente</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Informações do Cliente</h5>
+        <table class="table table-bordered">
+            <tr>
+                <th>ID:</th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr>
+                <th>Nome:</th>
+                <td>@Model.Nome</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>@Model.Email</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@if (Model.Logradouros != null && Model.Logradouros.Any())
+{
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Logradouros</h5>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var logradouro in Model.Logradouros)
+                    {
+                        <tr>
+                            <td>@logradouro.Id</td>
+                            <td>@logradouro.Descricao</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
