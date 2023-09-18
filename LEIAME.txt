@@ -12,8 +12,10 @@ Autenticação por Authorization: Bearer {token}
 
 O que creio ter ficado pendente:
 
-No back está pendente implementar classes de teste unitários,e testes de integração 
+No back WebApi/WebApi/WebApi 
+Está pendente implementar classes de teste unitários,e testes de integração 
 e rollbacks no banco de dados para certos casos de adição (exemplo, adição de logradouros que ocorrem após adiciona cliente).
 
-No front, está pendente a inserção de logradouros, e a alteração dos dados. 
+No front (WebApp/WebAppClientes/WebAppClientes) 
+Está pendente a inserção de logradouros, e a alteração dos dados. 
 O front eu fiz totalmente consultando na internet, por ser onde eu tenho menos experiencia.
