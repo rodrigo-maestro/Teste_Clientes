@@ -1,5 +1,3 @@
-Primeiramente, obrigado pela oportunidade
-
 A documentação do back se dá pelo swagger ao executar o projeto no visual studio (utilizado o visual studio 2022)
 
 a versão utilizada .Net core 6.0
